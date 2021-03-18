@@ -1,0 +1,33 @@
+{
+  "name": "axios-esm",
+  "version": "1.0.0",
+  "description": "Bundled axios version as ESModule",
+  "main": "index.js",
+  "scripts": {
+    "commonjsToESM": "rollup -c ./rollup.config.js",
+    "stealTypes": "cp ./node_modules/axios/index.d.ts ./index.d.ts",
+    "stealChangelog": "cp ./node_modules/axios/CHANGELOG.md CHANGELOG.md",
+    "clean": "rm ./index.js ./index.d.ts CHANGELOG.md",
+    "build": "yarn run clean & yarn run commonjsToESM & yarn run stealTypes & yarn run stealChangelog"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uranium93/axios-esm.git"
+  },
+  "keywords": [
+    "esmodule",
+    "axios",
+    "commonjs"
+  ],
+  "author": "Abderrahmen Hanafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uranium93/axios-esm/issues"
+  },
+  "homepage": "https://github.com/uranium93/axios-esm#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "axios": "^0.21.1",
+    "rollup": "^2.39.1"
+  }
+}
